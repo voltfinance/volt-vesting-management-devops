@@ -1,0 +1,17 @@
+version: 0.2
+phases:
+  install:
+    runtime-versions:
+      nodejs: 18
+    commands:
+      #
+      - echo Install dependencies...
+      - yarn install
+      #
+      - echo Build application...
+      - yarn run build:dist
+      #
+artifacts:
+  base-directory: dist
+  files:
+    - "**/*"
